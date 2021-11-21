@@ -21,7 +21,7 @@ ctx = cl.Context(devs)
 queue = cl.CommandQueue(ctx, properties=cl.command_queue_properties.PROFILING_ENABLE)
 
 # read kernel from cpp file
-kernel = open('test.cpp').read()
+kernel = open('optimize.cpp').read()
 # build the kernel
 prg = cl.Program(ctx, kernel).build()
 mf = cl.mem_flags
