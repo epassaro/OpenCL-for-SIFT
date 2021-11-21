@@ -2,7 +2,6 @@
 
 import time
 import pyopencl as cl
-import pyopencl.array
 import numpy as np
 import cv2
 
