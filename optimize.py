@@ -342,14 +342,14 @@ for i in range(kpt_list.shape[0]):
                              _response=kpt_list[i][4], _octave=kpt_list[i][2]))
 
 # generate result image
-print 'the final image with keypoints generated: PyOpenCL_result.jpg'
+print('the final image with keypoints generated: PyOpenCL_result.jpg')
 image = np.zeros_like(img)
 # image = cv2.drawKeypoints(img, kpts, image, flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
 image = cv2.drawKeypoints(img, kpts, image)
 cv2.imwrite('PyOpenCL_result.jpg', image)
 
 print('')
-print 'running the OpenCV SIFT'
+print('running the OpenCV SIFT')
 start = time.time()
 sift = cv2.xfeatures2d.SIFT_create()
 kp = sift.detect(img, None)
@@ -357,10 +357,10 @@ end = time.time()
 print("total time for OpenCV SIFT: {}".format(end - start))
 image = cv2.drawKeypoints(img, kp, image)
 cv2.imwrite('OpenCV_SIFT.jpg', image)
-print 'the final image of OpenCV SIFT: OpenCV_SIFT.jpg'
+print('the final image of OpenCV SIFT: OpenCV_SIFT.jpg')
 
 print('')
-print 'running the OpenCV SURF'
+print('running the OpenCV SURF')
 start = time.time()
 surf = cv2.xfeatures2d.SURF_create(400)
 kp, des = surf.detectAndCompute(img, None)
@@ -368,4 +368,4 @@ end = time.time()
 print("total time for OpenCV SURF: {}".format(end - start))
 image = cv2.drawKeypoints(img, kp, image)
 cv2.imwrite('OpenCV_SURF.jpg', image)
-print 'the final image of OpenCV SURF: OpenCV_SURF.jpg'
+print('the final image of OpenCV SURF: OpenCV_SURF.jpg')
