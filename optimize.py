@@ -338,7 +338,7 @@ print('total number of final keypoints: {}'.format(kpt_list.shape[0]))
 kpts = []
 for i in range(kpt_list.shape[0]):
     kpts.append(cv2.KeyPoint(x=kpt_list[i][1], y=kpt_list[i][0], _size=kpt_list[i][3], _angle=kpt_list[i][5],
-                             _response=kpt_list[i][4], _octave=kpt_list[i][2]))
+                             _response=kpt_list[i][4], _octave=int(kpt_list[i][2])))
 
 # generate result image
 print('the final image with keypoints generated: PyOpenCL_result.jpg')
